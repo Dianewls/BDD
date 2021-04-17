@@ -17,12 +17,22 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         tools:context="com.firida_diane.testrecyclerview.MainActivity">
 
-        
+
         <androidx.recyclerview.widget.RecyclerView
 
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scrollbars="vertical" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+
+            android:contentDescription="@string/submit"
+            android:layout_margin="16dp" />
     </RelativeLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

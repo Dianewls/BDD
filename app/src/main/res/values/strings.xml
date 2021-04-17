@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BDD</string>
+    <string name="submit">monfloatButton</string>
 </resources>

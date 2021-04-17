@@ -2,16 +2,19 @@ package com.example.bdd;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     CoordinatorLayout mcoordinatorLayout;
     private List<Planete> planetes;
     final String PREFS_NAME = "preferences_file";
-    FloatingActionButton btn;
+    FloatingActionButton fab;
 
     TextView tv ;
     @Override
@@ -35,6 +38,16 @@ public class MainActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         planetes=new ArrayList<Planete>();
+
+         fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fm = getSupportFragmentManager();
+                FragmentPlanete fragmentplanete = FragmentPlanete.newInstance("Titre");
+                fragmentplanete.show(fm, "fragmentplanete");
+            }
+        });
 
         mcoordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
         //tv = findViewById(R.id.tv);
